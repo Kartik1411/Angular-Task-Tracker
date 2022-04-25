@@ -37,4 +37,8 @@ export class TaskService {
     const updateTaskReminderUrl = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(updateTaskReminderUrl, task, httpOptions);
   }
+
+  addNewTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
+  }
 }

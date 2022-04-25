@@ -1,4 +1,10 @@
-<header>
+<header *ngIf="hasRoute('/')">
   <h1>{{ title }}</h1>
-  <app-button color="black" text="Add Task" (btnClick)="addTask()"></app-button>
+  <br />
+  <h4>Note: To mark as complete, double click on the task.</h4>
+  <app-button
+    color="{{ showAddTask ? 'red' : 'Green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add ' }}"
+    (btnClick)="addTask()"
+  ></app-button>
 </header>
